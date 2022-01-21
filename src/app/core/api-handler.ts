@@ -72,6 +72,12 @@ export class ApiHandlerInterceptor implements HttpInterceptor {
         return error('E-Mail "' + customer.email + '" is already taken')
       }
 
+      if (currentCustomer.find((res: Customer) => 
+        (res.firstName === customer.firstName) && (res.lastName === customer.lastName) && (res.dateOfBirth === customer.dateOfBirth))) 
+      {
+        return error(`Customer ${customer.firstName} With : ${customer.dateOfBirth} is already taken`)
+      }
+
       customer.id = currentCustomer.length ? Math.max(...currentCustomer.map((x: any) => x.id)) + 1 : 1;
       currentCustomer.push(customer);
       localStorage.setItem('customers', JSON.stringify(currentCustomer));
