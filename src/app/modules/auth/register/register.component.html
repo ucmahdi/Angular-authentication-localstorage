@@ -1,0 +1,90 @@
+<div class="card">
+  <h4 class="card-header">Register</h4>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" formControlName="firstName" class="form-control"
+          [ngClass]="{ 'is-invalid': form.get('firstName')?.invalid && form.get('firstName')?.dirty }" />
+
+        <div *ngIf="form.get('firstName')?.invalid && form.get('firstName')?.dirty" class="invalid-feedback">
+          <div *ngIf="form.get('firstName')?.hasError('required')">First Name is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text"  id="lastName" formControlName="lastName" class="form-control"
+          [ngClass]="{ 'is-invalid': form.get('lastName')?.invalid && form.get('lastName')?.dirty }" />
+
+        <div *ngIf="form.get('lastName')?.invalid && form.get('lastName')?.dirty" class="invalid-feedback">
+          <div *ngIf="form.get('lastName')?.hasError('required')">Last Name is required</div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <label for="dateOfBirth">Date Of Birth</label>
+        <input type='date' id="dateOfBirth" formControlName="dateOfBirth" class="form-control" 
+        [ngClass]="{ 'is-invalid': form.get('dateOfBirth')?.invalid && form.get('dateOfBirth')?.dirty }" />
+        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+
+        <div *ngIf="form.get('dateOfBirth')?.invalid && form.get('dateOfBirth')?.dirty" class="invalid-feedback">
+          <div *ngIf="form.get('dateOfBirth')?.hasError('required')">DateOfBirth is required</div>
+        </div>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input type="email" id=email formControlName="email" class="form-control"
+          [ngClass]="{ 'is-invalid': form.get('email')?.invalid && form.get('email')?.dirty }" />
+
+        <div *ngIf="form.get('email')?.invalid && form.get('email')?.dirty" class="invalid-feedback">
+          <div *ngIf="form.get('email')?.hasError('required')">Email Name is required</div>
+          <div *ngIf="form.get('email')?.hasError('email')">Email must be a valid email address</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">PhoneNumber</label>
+        <input type="number" id="phoneNumber" formControlName="phoneNumber" class="form-control"
+          [ngClass]="{ 'is-invalid': form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.dirty }" />
+
+        <div *ngIf="form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.dirty" class="invalid-feedback">
+          <div *ngIf="form.get('phoneNumber')?.hasError('required')">PhoneNumber is required</div>
+          <div *ngIf="form.get('phoneNumber')?.hasError('minlength')">PhoneNumber must be at least 9 characters</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bankAccountNumber">BankAccountNumber</label>
+        <input type="number" id="bankAccountNumber" formControlName="bankAccountNumber" class="form-control"
+          [ngClass]="{ 'is-invalid': form.get('bankAccountNumber')?.invalid && form.get('bankAccountNumber')?.dirty }" />
+
+        <div *ngIf="form.get('bankAccountNumber')?.invalid && form.get('bankAccountNumber')?.dirty" class="invalid-feedback">
+          <div *ngIf="form.get('bankAccountNumber')?.hasError('required')">BankAccountNumber is required</div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" class="form-control"
+          [ngClass]="{ 'is-invalid': form.get('password')?.invalid && form.get('password')?.dirty }" />
+
+        <div *ngIf="form.get('password')?.invalid && form.get('password')?.dirty" class="invalid-feedback">
+          <div *ngIf="form.get('password')?.hasError('required')">Password is required</div>
+          <div *ngIf="form.get('password')?.hasError('minlength')">Password must be at least 6 characters</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" [disabled]="loading" class="btn btn-primary px-4">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Register
+        </button>
+        <button routerLink="../login" class="btn btn-default ml-3">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

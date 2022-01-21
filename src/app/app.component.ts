@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+  <router-outlet></router-outlet>
+  <alert></alert>
+  `
 })
+
 export class AppComponent {
-  title = 'rayankar-test';
+  title = 'authentication';
 }
