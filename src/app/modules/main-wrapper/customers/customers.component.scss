@@ -1,0 +1,39 @@
+.table {
+    overflow: hidden;
+    border-radius: 6px;
+
+    th {
+        border-bottom-color: #EEEEEE;
+    }
+
+    tr:hover > td {
+        background-color: #FAFAFA;
+    }
+
+    td, th {
+        padding: 15px;
+        background-color: #fff;
+        border-top-color: #EEEEEE;
+    }
+}
+
+.demo {
+    padding-top: 60px;
+    padding-bottom: 110px;
+}
+
+.demo-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #212121;
+    text-align: center;
+}
+
+.demo-footer > a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+}
