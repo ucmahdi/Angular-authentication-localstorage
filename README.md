@@ -1,6 +1,4 @@
-# authentication
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+<h1 align="center">Authorization Localstorage - The simple authentication for client</h1>
 
 ## Development server
 
